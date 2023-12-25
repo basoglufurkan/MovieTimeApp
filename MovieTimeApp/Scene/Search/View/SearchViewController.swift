@@ -27,7 +27,6 @@ class SearchViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: MovieTableViewCell.id, bundle: nil), forCellReuseIdentifier: "movieCell")
-        searchIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(searchIconTap)))
         arrowIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(arrowIconTap)))
         arrowIcon.isUserInteractionEnabled = true
     }
@@ -44,9 +43,6 @@ class SearchViewController: UIViewController {
         }
     }
     
-    @objc fileprivate func searchIconTap() {
-        searchTextField.becomeFirstResponder()
-    }
     @objc fileprivate func arrowIconTap() {
         HomeViewController.present(from: self)
     }
