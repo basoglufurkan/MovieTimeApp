@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="rOy-FN-HVk" customClass="SimilarMoviesCollectionViewCell" customModule="MovieTimeApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="143" height="283"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="143" height="283"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MU4-ci-urG">
+                        <rect key="frame" x="0.0" y="2" width="143" height="211.66666666666666"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiderman: No Way Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljZ-DT-c8B">
+                        <rect key="frame" x="0.0" y="223.66666666666666" width="143" height="38.333333333333343"/>
+                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="61o-5V-HJy">
+                        <rect key="frame" x="0.0" y="270.66666666666669" width="12" height="11.666666666666686"/>
+                        <color key="tintColor" red="0.94117647410000005" green="0.72941178080000002" blue="0.2823529541" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="4yf-ZS-f7S"/>
+                            <constraint firstAttribute="width" constant="12" id="TZh-t3-ZhJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1/10 IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLK-KF-Hn5">
+                        <rect key="frame" x="16" y="270" width="119" height="14"/>
+                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
+                        <color key="textColor" name="textGray"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="BSs-6K-BSc"/>
+            <constraints>
+                <constraint firstItem="QLK-KF-Hn5" firstAttribute="leading" secondItem="61o-5V-HJy" secondAttribute="trailing" constant="4" id="8SF-ZM-Vlh"/>
+                <constraint firstItem="QLK-KF-Hn5" firstAttribute="top" relation="lessThanOrEqual" secondItem="ljZ-DT-c8B" secondAttribute="bottom" constant="8" id="Kxq-3a-LLb"/>
+                <constraint firstItem="MU4-ci-urG" firstAttribute="leading" secondItem="rOy-FN-HVk" secondAttribute="leading" id="QRx-0d-2yh"/>
+                <constraint firstAttribute="trailing" secondItem="ljZ-DT-c8B" secondAttribute="trailing" id="RLY-lC-b5V"/>
+                <constraint firstAttribute="bottom" secondItem="61o-5V-HJy" secondAttribute="bottom" id="UQS-AO-9Ae"/>
+                <constraint firstItem="61o-5V-HJy" firstAttribute="leading" secondItem="rOy-FN-HVk" secondAttribute="leading" id="f2R-FC-K7B"/>
+                <constraint firstItem="QLK-KF-Hn5" firstAttribute="centerY" secondItem="61o-5V-HJy" secondAttribute="centerY" id="g1D-DF-8ji"/>
+                <constraint firstAttribute="trailing" secondItem="MU4-ci-urG" secondAttribute="trailing" id="gGB-Fv-t7b"/>
+                <constraint firstItem="ljZ-DT-c8B" firstAttribute="top" relation="lessThanOrEqual" secondItem="MU4-ci-urG" secondAttribute="bottom" constant="8" id="kuF-xD-UEw"/>
+                <constraint firstAttribute="trailing" secondItem="QLK-KF-Hn5" secondAttribute="trailing" constant="8" id="lQR-0e-Mk7"/>
+                <constraint firstItem="MU4-ci-urG" firstAttribute="top" secondItem="rOy-FN-HVk" secondAttribute="top" id="lSq-Fs-R7y"/>
+                <constraint firstItem="MU4-ci-urG" firstAttribute="height" secondItem="rOy-FN-HVk" secondAttribute="height" multiplier="0.761484" id="ouA-dr-8o5"/>
+                <constraint firstItem="ljZ-DT-c8B" firstAttribute="leading" secondItem="rOy-FN-HVk" secondAttribute="leading" id="vd1-I5-oCi"/>
+            </constraints>
+            <connections>
+                <outlet property="movieImageView" destination="MU4-ci-urG" id="2vq-rj-GsA"/>
+                <outlet property="ratingLabel" destination="QLK-KF-Hn5" id="Ko0-wJ-cPy"/>
+                <outlet property="titleLabel" destination="ljZ-DT-c8B" id="TgB-tH-d5c"/>
+            </connections>
+            <point key="canvasLocation" x="129" y="43"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="tray" catalog="system" width="128" height="88"/>
+        <namedColor name="textGray">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

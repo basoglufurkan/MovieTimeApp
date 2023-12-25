@@ -127,7 +127,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedMovieId = viewModel.movieItems[indexPath.row].id  // Get the selected movie ID
         let selectedMovie = viewModel.movieItems[indexPath.row]
         
-        DetailViewController.present(from: self, movieId: selectedMovieId, movie: selectedMovie)
+        DetailViewController.present(from: self, movieId: selectedMovieId, movie: selectedMovie, similarMovie: viewModel.movieItems)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

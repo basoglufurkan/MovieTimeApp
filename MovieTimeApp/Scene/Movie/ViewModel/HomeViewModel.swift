@@ -12,6 +12,7 @@ class HomeViewModel {
     let manager = HomeManager.shared
     var movie: Movie?
     var movieItems = [MovieResult]()
+    var similarMovies: MovieResult?
     var movies = [MovieResult]()
     var favoriteMovies: [MovieResult] {
         return movieItems.filter { isFavorite(movie: $0) }
@@ -52,6 +53,19 @@ class HomeViewModel {
             } else {
                 self?.movie = movie
                 self?.successCallback?()
+            }
+        }
+    }
+    
+    func getSimilarMovies(id: Int) {
+        manager.getSimilarMovie(movieId: id) { [weak self] movie, error in
+            guard let self = self else { return }
+            if let error = error {
+                self.errorCallback?(error.localizedDescription)
+            } else {
+                //will be updated
+                self.movie = movie
+                self.successCallback?()
             }
         }
     }

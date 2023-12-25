@@ -50,6 +50,17 @@ class HomeManager: HomeManagerProtocol {
         }
     }
     
+    func getSimilarMovie(movieId: Int, complete: @escaping ((Movie?, Error?) -> ())) {
+        NetworkManager.shared.requestMovie(url: "https://api.themoviedb.org/3/movie/\(movieId)/similar", method: .get) { response in
+            switch response {
+            case .success(let data):
+                complete(data, nil)
+            case .failure(let error):
+                complete(nil, error)
+            }
+        }
+    }
+    
     
 }
 
