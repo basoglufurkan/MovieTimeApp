@@ -1,1 +1,6 @@
-![Uploading Simulator Screen Recording - iPhone 15 - 2023-12-25 at 19.00.53.GIF…]()
+# Movie-Time
+
+
+## Uygulamanın Demosu
+https://github.com/basoglufurkan/MovieTimeApp/assets/45877677/eb048585-e335-4e7f-a715-7d9a42d8f7ac
+
