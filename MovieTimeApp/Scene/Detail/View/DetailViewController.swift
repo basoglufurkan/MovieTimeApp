@@ -21,8 +21,7 @@ class DetailViewController: UIViewController {
     var viewModel = HomeViewModel()
     var movieId: Int?
     var movie: MovieResult?
-    var index: Int = 0
-    var titleText: String = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         arrowImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(arrowIconTap)))
@@ -31,21 +30,20 @@ class DetailViewController: UIViewController {
         setupUI()
     }
     
-    
     func prepareNetwork(){
         guard let movieId = movieId else { return }
         // Fetch details for the specified movie ID
         viewModel.getMovieDetails(id: movieId)
-        
     }
+    
     func setupUI() {
-        
+
         guard let movie = movie else {
             print("Movie data is not available")
             return
         }
         
-        // Update the UI elements with the movie details
+        // Update the UI elements
         movieTitle.text = movie.titleText
         movieOverview.text = movie.overViewText
         movieImg.loadURL(url: movie.posterImage)
@@ -67,7 +65,7 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController: UICollectionViewDataSource {
+extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movieItems.count
     }
@@ -77,12 +75,10 @@ extension DetailViewController: UICollectionViewDataSource {
         return cell
     }
     
-}
-
-extension DetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 90, height: 48)
     }
+    
 }
 
 extension DetailViewController: PanModalPresentable {
