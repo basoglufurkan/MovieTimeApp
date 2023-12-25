@@ -1,24 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0B6-zs-y1K">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="WGM-BX-ECr">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="HomeViewController" id="0B6-zs-y1K" customClass="HomeViewController" customModule="MovieTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n7I-ot-n9O">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="11s-FA-wB5">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.38431376220000002" green="0.12549020350000001" blue="0.1019607931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Wqq-2y-Kn0">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13d-gu-9iu">
+                                            <rect key="frame" x="348" y="8" width="20" height="42"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" image="magnifyingglass" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="searchButtonClicked:" destination="0B6-zs-y1K" eventType="touchUpInside" id="vBD-Z0-Z44"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OE-vH-2Ux" customClass="CustomSegment" customModule="MovieTimeApp" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="48" width="377" height="44"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="HEh-lq-82H"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.38431376220000002" green="0.12549020350000001" blue="0.1019607931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="13d-gu-9iu" secondAttribute="bottom" constant="50" id="1u8-p1-ukl"/>
+                                        <constraint firstItem="13d-gu-9iu" firstAttribute="top" secondItem="Wqq-2y-Kn0" secondAttribute="top" constant="8" id="3QK-9v-7g6"/>
+                                        <constraint firstItem="3OE-vH-2Ux" firstAttribute="leading" secondItem="Wqq-2y-Kn0" secondAttribute="leading" constant="8" id="RSE-Oy-sRo"/>
+                                        <constraint firstAttribute="trailing" secondItem="13d-gu-9iu" secondAttribute="trailing" constant="25" id="fhL-AM-ahe"/>
+                                        <constraint firstAttribute="trailing" secondItem="3OE-vH-2Ux" secondAttribute="trailing" constant="8" id="sKB-lW-YSl"/>
+                                        <constraint firstAttribute="bottom" secondItem="3OE-vH-2Ux" secondAttribute="bottom" constant="8" id="wEs-CZ-sGy"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="0B6-zs-y1K" id="Y2A-Uc-cbb"/>
+                                    <outlet property="delegate" destination="0B6-zs-y1K" id="kcv-uE-C6x"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zfi-qL-KwX"/>
+                        <color key="backgroundColor" red="0.38431376220000002" green="0.12549020350000001" blue="0.1019607931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="zfi-qL-KwX" firstAttribute="bottom" secondItem="11s-FA-wB5" secondAttribute="bottom" id="78k-0m-33l"/>
+                            <constraint firstItem="11s-FA-wB5" firstAttribute="top" secondItem="zfi-qL-KwX" secondAttribute="top" id="AsL-W7-frL"/>
+                            <constraint firstItem="11s-FA-wB5" firstAttribute="leading" secondItem="zfi-qL-KwX" secondAttribute="leading" id="QSx-OW-bta"/>
+                            <constraint firstItem="zfi-qL-KwX" firstAttribute="trailing" secondItem="11s-FA-wB5" secondAttribute="trailing" id="wgo-1b-QIm"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zWn-zT-Idz"/>
+                    <connections>
+                        <outlet property="customSegment" destination="3OE-vH-2Ux" id="oSF-jK-d6D"/>
+                        <outlet property="tableView" destination="11s-FA-wB5" id="a9O-2Z-xk5"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cMs-fm-Xme" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3529.0076335877861" y="83.098591549295776"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
